@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <label>Select spider type:</label>
+         <input type="radio" id="search_res" name="scrapper_type" value="search_result">
+        <label for="search_res">Get form search result page</label>
+         <input type="radio" name="scrapper_type" value="page_scrapper">
+        <label for="product_page">Get form product page</label>
+
+        <label>Type keywords to scrape</label>
+        <input type="text" name="keywords">
+        <label>Type N pages to scrape</label>
+        <input type="number" name="max_pages">
+        <label>Type keyword to get from base</label>
+        <input type="text" name="keyword">
+        <label>Type if scrape with rewievs</label>
+        <input type="checkbox" name="with_rewiews">
+        <label>Type if image download</label>
+        <input type="checkbox" name="image_manage">
+        <input type="submit" value="Scrape!" name="submit">
+        <a type="button" href="{% url 'cancel_url' %}">Cancel!</a>
+    </form>
+</body>
+</html>
